@@ -7,7 +7,7 @@ export class AuthService {
 
     constructor() {
         this.client
-            .setEndPoint(config.appwriteUrl)
+            .setEndpoint(config.appwriteUrl)
             .setProject(config.appwriteProjectId);
         this.account = new Account(this.client)
     }
@@ -40,8 +40,6 @@ export class AuthService {
         } catch (error) {
             throw new Error(`Error while getCurrentUser:  ${error}`)
         }
-
-        return null
     }
 
     async logOut() {
@@ -55,4 +53,4 @@ export class AuthService {
 
 const authService = new AuthService()
 
-export default AuthService;
+export default authService;
