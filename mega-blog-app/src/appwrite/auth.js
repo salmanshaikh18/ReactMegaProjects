@@ -33,6 +33,24 @@ export class AuthService {
             throw new Error(`Error while login: ${error}`);
         }
     }
+
+    async getCurrentUser() {
+        try {
+            return await this.account.get()
+        } catch (error) {
+            throw new Error(`Error while getCurrentUser:  ${error}`)
+        }
+
+        return null
+    }
+
+    async logOut() {
+        try {
+            await this.account.deleteSessions()
+        } catch (error) {
+            throw new Error('Error while logOut: ', error)
+        }
+    }
 }
 
 const authService = new AuthService()
