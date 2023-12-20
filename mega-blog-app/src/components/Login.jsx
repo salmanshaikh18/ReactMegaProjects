@@ -4,7 +4,7 @@ import {login as authLogin} from '../store/authSlice'
 import {Button, Input, Logo} from './index'
 import {useDispatch} from '../appwrite/auth'
 import {useForm} from 'react-hook-form'
-
+import authService from '../appwrite/auth'
 
 const Login = () => {
 
